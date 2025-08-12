@@ -12,12 +12,13 @@ export default {
   main: {
     greeting: "Hello",
     name: "Metis Namaung",
-    profession: "Frontend Developer And Web Developer ",
+    // profession: "Frontend Developer And Web Developer ",
+    profession: "Mobile Developer",
   },
   about: {
     title1: "About Me",
     line1:
-      "Hello, I'm Metis Namaung, interested in Frontend Developer and Web Developer positions. I graduated with a Bachelor's degree in Computer Engineering from the Faculty of Industrial Technology at Lampang Rajabhat University. I have consistently studied, learned, and improved my skills, with attention to detail, logical thinking, ability to work under pressure, and good teamwork skills.",
+      "Hello, I'm Metis Namaung, interested in Mobile Developer and Web Developer positions. I graduated with a Bachelor's degree in Computer Engineering from the Faculty of Industrial Technology at Lampang Rajabhat University. I have consistently studied, learned, and improved my skills, with attention to detail, logical thinking, ability to work under pressure, and good teamwork skills.",
   },
   skill: {
     title1: "Skill",
@@ -38,19 +39,30 @@ export default {
       responsibility2: "Configure switches (Aruba, Huawei, Cisco)",
       responsibility3: "Programming",
     },
+    company2: {
+      name: "Digital World Group Co., Ltd.",
+      period: "May 2023 - August 2023",
+      position: "Full Stack Developer (Full-time)",
+      responsibility1:
+        "Designed user-friendly and visually appealing website interfaces",
+      responsibility2: "Developed websites according to client requirements",
+      responsibility3: "Deployed websites to the production environment",
+    },
   },
   projects: {
     title: "My Projects",
     project1: {
-      title: "Game and Streaming Accounts Marketplace",
+      title: "E-commerce Website for All Types of Products",
       description:
-        "A 24/7 online marketplace for game and streaming accounts, developed with Nuxt 3, Node.js and MongoDB",
+        "An e-commerce website for all types of products with QR code payment support and real-time shipping status updates. Includes a real-time chat system for customers to communicate with the store and admin anytime. Developed using Vue 3, Node.js Express, and MongoDB.",
     },
     project2: {
-      title: "Resume Website",
-      description: "Personal resume website built with Vue 3 and Vite",
+      title: "Real-time Exercise Guidance Application Using Camera Detection",
+      description:
+        "An application that provides correct exercise guidance using real-time camera detection. Developed using Flutter, Firebase, and Google ML Kit.",
     },
   },
+
   contact: {
     title: "Contact",
     firstName: "First Name",

@@ -1,19 +1,8 @@
 //app.vue
 <template>
-  <div
-    class="relative min-h-screen w-full overflow-hidden"
-    :class="darkMode ? 'bg-black' : 'bg-white'"
-  >
-    <!-- พื้นหลังเส้น (สีตรงข้ามกับพื้นหลัง) -->
-    <canvas
-      ref="canvas"
-      class="absolute top-0 left-0 w-full h-full opacity-80"
-    ></canvas>
-
-    <!-- Navbar -->
+  <div class="relative min-h-screen w-full overflow-hidden" :class="darkMode ? 'bg-black' : 'bg-white'">
+    <canvas ref="canvas" class="absolute top-0 left-0 w-full h-full opacity-80"></canvas>
     <Navbar class="relative z-20" @dark-mode-changed="updateDarkMode" />
-
-    <!-- เนื้อหาหลัก -->
     <div class="relative z-10">
       <router-view />
     </div>
@@ -37,7 +26,6 @@ export default {
     let lines = [];
     let animationFrameId = null;
 
-    // กำหนดพารามิเตอร์ของเส้น
     const LINE_COUNT = 100;
     const LINE_SPEED = 0.5;
     const MOUSE_SENSITIVITY = 0.2;
@@ -94,10 +82,9 @@ export default {
         const endX = this.x + Math.cos(this.angle) * this.length;
         const endY = this.y + Math.sin(this.angle) * this.length;
         ctx.lineTo(endX, endY);
-        // เปลี่ยนสีเส้นตาม darkMode
         const lineColor = darkMode.value
-          ? "rgba(255, 255, 255, " // โหมดดำ เส้นขาว
-          : "rgba(0, 0, 0, "; // โหมดขาว เส้นดำ
+          ? "rgba(255, 255, 255, "
+          : "rgba(0, 0, 0, ";
         ctx.strokeStyle = `${lineColor}${this.opacity})`;
         ctx.lineWidth = 1;
         ctx.stroke();
@@ -132,12 +119,10 @@ export default {
       height = canvasEl.height = window.innerHeight;
     };
 
-    // เพิ่มฟังก์ชันรับค่า darkMode จาก Navbar
     const updateDarkMode = (isDark) => {
       darkMode.value = isDark;
     };
 
-    // อ่านค่า darkMode จาก localStorage เมื่อเริ่มต้น
     const initDarkMode = () => {
       const stored = localStorage.getItem("darkMode");
       darkMode.value =

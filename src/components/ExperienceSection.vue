@@ -1,22 +1,16 @@
 <template>
-  <div
-    id="experience-section"
-    ref="experienceSection"
-    class="min-h-[10vh] px-5 md:px-[5%] pt-32 md:pt-44 py-16 text-center text-lg opacity-0 translate-y-10 transition-all duration-1000 ease-in-out text-white dark:text-black"
-  >
-    <h2
-      ref="experienceTitle"
-      class="text-3xl font-bold mb-8 opacity-0 translate-y-5 transition-all duration-700 text-black dark:text-white"
-    >
+  <div id="experience-section" ref="experienceSection"
+    class="min-h-[10vh] px-5 md:px-[5%] pt-32 md:pt-44 py-16 text-center text-lg opacity-0 translate-y-10 transition-all duration-1000 ease-in-out text-white dark:text-black">
+    <h2 ref="experienceTitle"
+      class="text-3xl font-bold mb-8 opacity-0 translate-y-5 transition-all duration-700 text-black dark:text-white">
       {{ $t("experience.title") }}
     </h2>
 
-    <div class="max-w-3xl mx-auto">
-      <!-- Experience Item -->
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row gap-6">
+      <!-- Experience Item 1 -->
       <div
-        class="bg-white dark:bg-black rounded-xl p-6 md:p-8 shadow-lg mb-6 text-left opacity-0 translate-y-5 transition-all duration-700 text-black dark:text-white shadow-gray-300/50 dark:shadow-gray-700/50"
-        ref="experienceItem1"
-      >
+        class="w-full md:w-1/2 bg-white dark:bg-black rounded-xl p-6 md:p-8 shadow-lg text-left opacity-0 translate-y-5 transition-all duration-700 text-black dark:text-white shadow-gray-300/50 dark:shadow-gray-700/50"
+        ref="experienceItem1">
         <h3 class="text-2xl font-semibold mb-2">
           {{ $t("experience.company1.name") }}
         </h3>
@@ -35,6 +29,29 @@
           <li>{{ $t("experience.company1.responsibility3") }}</li>
         </ul>
       </div>
+
+      <!-- Experience Item 2 -->
+      <div
+        class="w-full md:w-1/2 bg-white dark:bg-black rounded-xl p-6 md:p-8 shadow-lg text-left opacity-0 translate-y-5 transition-all duration-700 text-black dark:text-white shadow-gray-300/50 dark:shadow-gray-700/50"
+        ref="experienceItem2">
+        <h3 class="text-2xl font-semibold mb-2">
+          {{ $t("experience.company2.name") }}
+        </h3>
+        <p class="text-lg opacity-80 mb-4">
+          {{ $t("experience.company2.period") }}
+        </p>
+        <p class="text-xl font-medium mb-2">
+          {{ $t("experience.company2.position") }}
+        </p>
+        <p class="text-xl font-medium mb-2">
+          {{ $t("experience.responsibilities") }}
+        </p>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>{{ $t("experience.company2.responsibility1") }}</li>
+          <li>{{ $t("experience.company2.responsibility2") }}</li>
+          <li>{{ $t("experience.company2.responsibility3") }}</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -48,6 +65,7 @@ const { t } = useI18n();
 const experienceSection = ref(null);
 const experienceTitle = ref(null);
 const experienceItem1 = ref(null);
+const experienceItem2 = ref(null);
 
 onMounted(() => {
   const experienceObserver = new IntersectionObserver(
@@ -68,6 +86,11 @@ onMounted(() => {
           experienceItem1.value?.classList.add("opacity-100", "translate-y-0");
           experienceItem1.value?.classList.remove("opacity-0", "translate-y-5");
         }, 600);
+
+        setTimeout(() => {
+          experienceItem2.value?.classList.add("opacity-100", "translate-y-0");
+          experienceItem2.value?.classList.remove("opacity-0", "translate-y-5");
+        }, 900);
       } else {
         experienceSection.value?.classList.remove(
           "opacity-100",
@@ -80,6 +103,9 @@ onMounted(() => {
 
         experienceItem1.value?.classList.remove("opacity-100", "translate-y-0");
         experienceItem1.value?.classList.add("opacity-0", "translate-y-5");
+
+        experienceItem2.value?.classList.remove("opacity-100", "translate-y-0");
+        experienceItem2.value?.classList.add("opacity-0", "translate-y-5");
       }
     },
     { threshold: 0.2 }

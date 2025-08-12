@@ -10,4 +10,8 @@ export default defineConfig({
       extensions: ["vue"],
     }),
   ],
+  server: {
+    port: 8000,
+    host: true,
+  },
 });

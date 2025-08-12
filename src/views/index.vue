@@ -23,8 +23,7 @@ import ContactSection from "../components/ContactSection.vue";
 import FooterSection from "../components/FooterSection.vue";
 </script>
 <style>
-/* เพิ่ม padding ด้านบนสำหรับทุกเซ็กชันที่เป็น anchor */
 [id] {
-  scroll-margin-top: 100px; /* ปรับตามความสูงของ navbar */
+  scroll-margin-top: 100px;
 }
 </style>

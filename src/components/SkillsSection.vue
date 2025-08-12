@@ -1,47 +1,27 @@
 <template>
-  <div
-    id="skills-section"
-    ref="skillsSection"
-    class="min-h-[10vh] px-3 sm:px-5 md:px-[5%] pt-20 sm:pt-24 md:pt-32 lg:pt-44 py-12 md:py-16 text-center text-base md:text-lg opacity-0 translate-y-10 transition-all duration-1000 ease-in-out text-black dark:text-white"
-  >
-    <h2
-      ref="skillsTitle"
-      class="text-2xl sm:text-3xl font-bold mb-6 md:mb-8 opacity-0 translate-y-5 transition-all duration-700"
-    >
+  <div id="skills-section" ref="skillsSection"
+    class="min-h-[10vh] px-3 sm:px-5 md:px-[5%] pt-20 sm:pt-24 md:pt-32 lg:pt-44 py-12 md:py-16 text-center text-base md:text-lg opacity-0 translate-y-10 transition-all duration-1000 ease-in-out text-black dark:text-white">
+    <h2 ref="skillsTitle"
+      class="text-2xl sm:text-3xl font-bold mb-6 md:mb-8 opacity-0 translate-y-5 transition-all duration-700">
       {{ $t("skill.title1") }}
     </h2>
 
     <!-- CATEGORIES -->
     <div class="space-y-12 md:space-y-16">
-      <SkillCategory
-        :title="$t('skill.frontend')"
-        :skills="frontendSkills"
-        @category-mounted="setupCategoryRefs('frontend', $event)"
-      />
+      <SkillCategory :title="$t('skill.frontend')" :skills="frontendSkills"
+        @category-mounted="setupCategoryRefs('frontend', $event)" />
 
-      <SkillCategory
-        :title="$t('skill.backend')"
-        :skills="backendSkills"
-        @category-mounted="setupCategoryRefs('backend', $event)"
-      />
+      <SkillCategory :title="$t('skill.backend')" :skills="backendSkills"
+        @category-mounted="setupCategoryRefs('backend', $event)" />
 
-      <SkillCategory
-        :title="$t('skill.database')"
-        :skills="databaseSkills"
-        @category-mounted="setupCategoryRefs('database', $event)"
-      />
+      <SkillCategory :title="$t('skill.database')" :skills="databaseSkills"
+        @category-mounted="setupCategoryRefs('database', $event)" />
 
-      <SkillCategory
-        :title="$t('skill.server')"
-        :skills="serverSkills"
-        @category-mounted="setupCategoryRefs('server', $event)"
-      />
+      <SkillCategory :title="$t('skill.server')" :skills="serverSkills"
+        @category-mounted="setupCategoryRefs('server', $event)" />
 
-      <SkillCategory
-        :title="$t('skill.tools')"
-        :skills="toolsSkills"
-        @category-mounted="setupCategoryRefs('tools', $event)"
-      />
+      <SkillCategory :title="$t('skill.tools')" :skills="toolsSkills"
+        @category-mounted="setupCategoryRefs('tools', $event)" />
     </div>
   </div>
 </template>
@@ -78,6 +58,8 @@ const frontendSkills = [
   { name: "Tailwind", icon: "/img/tail.png" },
   { name: "Vue", icon: "/img/vue.png" },
   { name: "Nuxt", icon: "/img/nuxt.png" },
+  { name: "Dart", icon: "/img/dart.png" },
+  { name: "Flutter", icon: "/img/flutter.png" },
 ];
 
 const backendSkills = [
